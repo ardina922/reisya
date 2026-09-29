@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TKJ BISA! ✨ SMKN 9 Kabupaten Tangerang</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        lilac: {
+                            50: '#f7f5ff',
+                            100: '#ede9fe',
+                            200: '#ddd6fe',
+                            300: '#c4b5fd',
+                            400: '#a78bfa',
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                            700: '#6d28d9',
+                            800: '#5b21b6',
+                            900: '#4c1d95',
+                            950: '#1e1338',
+                        },
+                        softblue: {
+                            100: '#e0f2fe',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0284c7',
+                        },
+                        techdark: {
+                            base: '#0c0a15',
+                            card: '#151128',
+                            border: '#2a224a',
+                            hover: '#33295c'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Lilac Aesthetic Effects */
+        .glow-lilac {
+            text-shadow: 0 0 15px rgba(167, 139, 250, 0.6), 0 0 30px rgba(124, 58, 237, 0.3);
+        }
+        .box-glow {
+            box-shadow: 0 10px 30px -10px rgba(139, 92, 246, 0.25);
+        }
+        .box-glow-hover:hover {
+            box-shadow: 0 15px 35px -5px rgba(167, 139, 250, 0.35);
+        }
+        .terminal-scroll::-webkit-scrollbar {
+            width: 8px;
+        }
+        .terminal-scroll::-webkit-scrollbar-track {
+            background: #0c0a15;
+        }
+        .terminal-scroll::-webkit-scrollbar-thumb {
+            background: #2a224a;
+            border-radius: 6px;
+        }
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(1deg); }
+        }
+        .animate-float {
+            animation: floatSlow 4s ease-in-out infinite;
+        }
+        .glass-card {
+            background: rgba(21, 17, 40, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(167, 139, 250, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-[#0c0a15] text-slate-100 font-sans antialiased selection:bg-lilac-400 selection:text-slate-950 min-h-screen flex flex-col">
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-[#0c0a15]/85 border-b border-lilac-900/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Logo & Title -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-lilac-500 via-indigo-500 to-softblue-400 flex items-center justify-center shadow-lg shadow-lilac-500/30 group-hover:scale-105 transition-transform duration-300">
+                    <i class="fa-solid fa-heart-pulse text-slate-950 text-lg font-bold"></i>
+                </div>
+                <div>
+                    <span class="font-extrabold text-xl tracking-wider text-white flex items-center gap-1.5">
+                        TKJ <span class="bg-gradient-to-r from-lilac-300 via-purple-300 to-softblue-300 bg-clip-text text-transparent glow-lilac">BISA! ✨</span>
+                    </span>
+                    <span class="text-[11px] text-lilac-300/80 block font-medium -mt-1">SMKN 9 Kabupaten Tangerang</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center space-x-7 text-sm font-semibold">
+                <a href="#beranda" class="text-slate-300 hover:text-lilac-300 transition-colors">Beranda</a>
+                <a href="#tentang" class="text-slate-300 hover:text-lilac-300 transition-colors">Tentang Saya</a>
+                <a href="#keahlian" class="text-slate-300 hover:text-lilac-300 transition-colors">Keahlian Utama</a>
+                <a href="#alat-jaringan" class="text-slate-300 hover:text-lilac-300 transition-colors flex items-center gap-1">
+                    <span>Alat Jaringan</span>
+                    <span class="px-1.5 py-0.5 rounded-full text-[10px] bg-lilac-500/30 text-lilac-200 border border-lilac-400/30">Foto</span>
+                </a>
+                <a href="#pengalaman" class="text-slate-300 hover:text-lilac-300 transition-colors">Pengalaman Praktik</a>
+                <a href="#terminal" class="text-slate-300 hover:text-lilac-300 transition-colors">CLI Terminal</a>
+                <a href="#kuis" class="text-slate-300 hover:text-lilac-300 transition-colors">Kuis TKJ</a>
+            </nav>
+
+            <!-- Cute Status Badge -->
+            <div class="hidden sm:flex items-center space-x-3">
+                <span class="inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-semibold bg-lilac-950/80 text-lilac-200 border border-lilac-500/40 shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-softblue-400 animate-ping mr-2"></span>
+                    🌸 Ardina Reisya Bintany
+                </span>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" aria-label="Buka Menu" class="md:hidden text-lilac-300 p-2 focus:outline-none">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-techdark-card border-b border-lilac-900/50 px-4 pt-2 pb-4 space-y-2">
+            <a href="#beranda" class="mobile-link block px-3 py-2 rounded-xl text-sm font-medium text-slate-200 hover:bg-lilac-900/40 hover:text-lilac-300">Beranda</a>
+            <a href="#tentang" class="mobile-link block px-3 py-2 rounded-xl text-sm font-medium text-slate-200 hover:bg-lilac-900/40 hover:text-lilac-300">Tentang Saya</a>
+            <a href="#keahlian" class="mobile-link block px-3 py-2 rounded-xl text-sm font-medium text-slate-200 hover:bg-lilac-900/40 hover:text-lilac-300">Keahlian Utama</a>
+            <a href="#alat-jaringan" class="mobile-link block px-3 py-2 rounded-xl text-sm font-medium text-slate-200 hover:bg-lilac-900/40 hover:text-lilac-300">Galeri Alat Jaringan</a>
+            <a href="#pengalaman" class="mobile-link block px-3 py-2 rounded-xl text-sm font-medium text-slate-200 hover:bg-lilac-900/40 hover:text-lilac-300">Pengalaman Praktik</a>
+            <a href="#terminal" class="mobile-link block px-3 py-2 rounded-xl text-sm font-medium text-slate-200 hover:bg-lilac-900/40 hover:text-lilac-300">CLI Terminal</a>
+            <a href="#kuis" class="mobile-link block px-3 py-2 rounded-xl text-sm font-medium text-slate-200 hover:bg-lilac-900/40 hover:text-lilac-300">Kuis TKJ</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="relative overflow-hidden pt-10 pb-20 lg:pt-20 lg:pb-28">
+        <!-- Lilac Interactive Network Node Canvas Background -->
+        <canvas id="network-canvas" class="absolute inset-0 w-full h-full opacity-40 pointer-events-auto"></canvas>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pointer-events-none">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Text Left -->
+                <div class="lg:col-span-7 space-y-6 pointer-events-auto">
+                    <!-- Cute Badges Row -->
+                    <div class="flex flex-wrap items-center gap-2">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-lilac-950/90 border border-lilac-600/40 text-xs font-semibold text-lilac-300">
+                            <i class="fa-solid fa-graduation-cap text-softblue-300"></i> Siswi SMKN 9 Kab. Tangerang
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-950/80 border border-indigo-500/30 text-xs font-semibold text-softblue-300">
+                            ✨ TKJ Girl Power
+                        </span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+                        Eksplorasi Seru <br>
+                        <span class="bg-gradient-to-r from-lilac-300 via-fuchsia-300 to-softblue-300 bg-clip-text text-transparent">
+                            Komputer & Jaringan
+                        </span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl">
+                        Halo kawan-kawan! 👋 Saya siswi jurusan <strong class="text-lilac-200">Teknik Komputer dan Jaringan (TKJ)</strong> di SMKN 9 Kabupaten Tangerang. Di sini saya mempelajari teori dan praktik langsung merakit hardware, mengonfigurasi router MikroTik, hingga menguasai Linux Debian.
+                    </p>
+
+                    <!-- Interactive Typing Container -->
+                    <div class="inline-flex items-center gap-3 px-4 py-3 rounded-2xl bg-techdark-card/90 border border-lilac-500/30 text-slate-200 font-mono text-xs sm:text-sm shadow-xl">
+                        <span class="text-lilac-400"><i class="fa-solid fa-terminal"></i></span>
+                        <span id="typing-text" class="text-lilac-200 font-semibold"></span>
+                        <span class="animate-pulse text-softblue-300 font-bold">|</span>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="pt-2 flex flex-wrap gap-4">
+                        <a href="#alat-jaringan" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-lilac-500 via-indigo-600 to-softblue-500 text-white font-bold hover:shadow-lg hover:shadow-lilac-500/30 hover:scale-105 transition-all text-sm">
+                            <i class="fa-solid fa-network-wired"></i>
+                            <span>Lihat Alat Jaringan</span>
+                        </a>
+                        <a href="#terminal" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-techdark-card border border-lilac-700/60 text-lilac-200 font-semibold hover:border-lilac-400 hover:text-white transition-all text-sm">
+                            <i class="fa-solid fa-code"></i>
+                            <span>Coba Live CLI Terminal</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Graphic Right Card -->
+                <div class="lg:col-span-5 pointer-events-auto">
+                    <div class="relative mx-auto max-w-md glass-card rounded-3xl p-6 shadow-2xl box-glow animate-float">
+                        <!-- Top Decor Bar -->
+                        <div class="flex items-center justify-between pb-4 border-b border-lilac-900/50">
+                            <div class="flex items-center gap-2">
+                                <span class="w-3 h-3 rounded-full bg-pink-400/90"></span>
+                                <span class="w-3 h-3 rounded-full bg-purple-400/90"></span>
+                                <span class="w-3 h-3 rounded-full bg-softblue-400/90"></span>
+                            </div>
+                            <span class="text-xs font-mono text-lilac-300/80">🌸 profile_status.sh</span>
+                        </div>
+
+                        <!-- Card Body -->
+                        <div class="mt-5 space-y-3.5 font-mono text-xs sm:text-sm">
+                            <div class="p-3 rounded-2xl bg-[#0c0a15]/90 border border-lilac-900/60 flex items-center justify-between">
+                                <span class="text-slate-400"><i class="fa-solid fa-school text-lilac-400 mr-2"></i> Sekolah:</span>
+                                <span class="text-slate-100 font-semibold text-right">SMKN 9 Kab. Tangerang</span>
+                            </div>
+
+                            <div class="p-3 rounded-2xl bg-[#0c0a15]/90 border border-lilac-900/60 flex items-center justify-between">
+                                <span class="text-slate-400"><i class="fa-solid fa-microchip text-softblue-300 mr-2"></i> Jurusan:</span>
+                                <span class="text-lilac-300 font-bold">TKJ (Komputer & Jaringan)</span>
+                            </div>
+
+                            <div class="p-3 rounded-2xl bg-[#0c0a15]/90 border border-lilac-900/60 flex items-center justify-between">
+                                <span class="text-slate-400"><i class="fa-solid fa-star text-amber-300 mr-2"></i> Tingkat:</span>
+                                <span class="text-pink-300 font-bold">Kelas 11 TKJ</span>
+                            </div>
+
+                            <!-- Learning Milestones Indicator -->
+                            <div class="pt-2 space-y-2">
+                                <div class="text-slate-300 text-xs font-sans font-semibold flex items-center justify-between">
+                                    <span>Progress Belajar TKJ:</span>
+                                    <span class="text-lilac-300">4 / 4 Topik Utama</span>
+                                </div>
+                                <div class="grid grid-cols-2 gap-2 text-xs font-sans">
+                                    <div class="p-2 rounded-xl bg-lilac-950/60 border border-lilac-800/50 text-lilac-200 flex items-center gap-1.5">
+                                        <i class="fa-solid fa-circle-check text-softblue-300"></i> Racik Hardware PC
+                                    </div>
+                                    <div class="p-2 rounded-xl bg-lilac-950/60 border border-lilac-800/50 text-lilac-200 flex items-center gap-1.5">
+                                        <i class="fa-solid fa-circle-check text-softblue-300"></i> Router MikroTik
+                                    </div>
+                                    <div class="p-2 rounded-xl bg-lilac-950/60 border border-lilac-800/50 text-lilac-200 flex items-center gap-1.5">
+                                        <i class="fa-solid fa-circle-check text-softblue-300"></i> Krimping RJ-45
+                                    </div>
+                                    <div class="p-2 rounded-xl bg-purple-950/80 border border-purple-500/50 text-pink-200 flex items-center gap-1.5 animate-pulse">
+                                        <i class="fa-solid fa-spinner animate-spin text-pink-300"></i> Debian 11 CLI
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="tentang" class="py-20 bg-techdark-card/60 border-t border-lilac-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold text-lilac-400 tracking-widest uppercase bg-lilac-950/80 px-3 py-1 rounded-full border border-lilac-800/60">🌸 Tentang Pembelajaran Saya</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Teori & Praktik Jaringan yang Menyenangkan</h2>
+                <p class="text-slate-300 mt-3 text-sm sm:text-base leading-relaxed">
+                    Pembelajaran di TKJ membantu saya memahami cara kerja perangkat komputer, jaringan, serta teknologi yang digunakan untuk menghubungkan berbagai perangkat secara global.
+                </p>
+                <div class="w-20 h-1 bg-gradient-to-r from-lilac-400 to-softblue-400 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="p-8 rounded-3xl bg-techdark-card border border-lilac-900/40 hover:border-lilac-500/60 box-glow-hover transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-lilac-950 border border-lilac-700/60 flex items-center justify-center text-lilac-300 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-book-bookmark"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">1. Dasar-Dasar Komputer</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Memahami anatomi fisik perangkat keras, cara kerja CPU, RAM, memori, motherboard, serta cara mendiagnosis gangguan sistem komputer.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-lilac-900/40 text-xs font-semibold text-lilac-300 flex items-center gap-1.5">
+                        <span>Landasan Pemahaman Hardware</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="p-8 rounded-3xl bg-techdark-card border border-lilac-900/40 hover:border-lilac-500/60 box-glow-hover transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-indigo-950 border border-indigo-700/60 flex items-center justify-center text-softblue-300 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-network-wired"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">2. Konsep & Praktik Jaringan</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Melakukan praktik pembuatan kabel UTP (Straight & Cross), pengujian kabel, pembuatan skema IP Address, subnetting, dan penyusunan topologi.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-lilac-900/40 text-xs font-semibold text-softblue-300 flex items-center gap-1.5">
+                        <span>Konektivitas Fisik & Logis</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="p-8 rounded-3xl bg-techdark-card border border-lilac-900/40 hover:border-lilac-500/60 box-glow-hover transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-purple-950 border border-purple-700/60 flex items-center justify-center text-pink-300 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">3. Sistem Operasi & Router</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Mempelajari konfigurasi MikroTik RouterBOARD agar koneksi internet tersalurkan dengan baik serta menguasai perintah CLI Linux Debian.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-lilac-900/40 text-xs font-semibold text-pink-300 flex items-center gap-1.5">
+                        <span>Konfigurasi & Administrasi Server</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Keahlian Utama Section -->
+    <section id="keahlian" class="py-20 bg-[#0c0a15]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold text-softblue-300 tracking-widest uppercase bg-indigo-950 px-3 py-1 rounded-full border border-indigo-800">✨ Kompetensi Keahlian TKJ</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">4 Keahlian Utama yang Saya Pelajari</h2>
+                <p class="text-slate-300 mt-3 text-sm">Empat pilar kemampuan utama yang diasah secara rutin di SMKN 9 Kabupaten Tangerang.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Skill Item 1 -->
+                <div class="p-6 sm:p-8 rounded-3xl bg-techdark-card border border-lilac-900/40 hover:border-lilac-500/60 transition-all box-glow-hover flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-mono font-bold text-lilac-300 bg-lilac-950 px-3 py-1 rounded-full border border-lilac-800">01 / HARDWARE</span>
+                            <i class="fa-solid fa-microchip text-2xl text-lilac-400/60 group-hover:text-lilac-300 transition-colors"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">1. Mengenal Komponen Perangkat Keras Komputer</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                            Memahami fungsi, kompatibilitas, dan tata cara pemasangan seluruh komponen PC seperti Motherboard, Processor (CPU), RAM, Power Supply, SSD/HDD, VGA Card, hingga sistem pendingin.
+                        </p>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-xs text-slate-300">
+                            <span>Tingkat Penguasaan</span>
+                            <span class="text-lilac-300 font-bold">95% (Mahir Merakit)</span>
+                        </div>
+                        <div class="w-full h-2.5 rounded-full bg-slate-900 overflow-hidden p-0.5 border border-lilac-900/50">
+                            <div class="h-full bg-gradient-to-r from-lilac-500 to-indigo-500 rounded-full w-[95%]"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill Item 2 -->
+                <div class="p-6 sm:p-8 rounded-3xl bg-techdark-card border border-lilac-900/40 hover:border-lilac-500/60 transition-all box-glow-hover flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-mono font-bold text-softblue-300 bg-indigo-950 px-3 py-1 rounded-full border border-indigo-800">02 / NETWORKING</span>
+                            <i class="fa-solid fa-diagram-project text-2xl text-softblue-400/60 group-hover:text-softblue-300 transition-colors"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">2. Memahami Konsep-Konsep Dasar Jaringan</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                            Memahami OSI Layer & TCP/IP, pengalamatan IP (IPv4) & Subnetting, jenis kabel jaringan (UTP Straight & Cross), crimping RJ-45, topologi Star & Bus, serta fungsi Switch & Router.
+                        </p>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-xs text-slate-300">
+                            <span>Tingkat Penguasaan</span>
+                            <span class="text-softblue-300 font-bold">90% (Paham Teori & Krimping)</span>
+                        </div>
+                        <div class="w-full h-2.5 rounded-full bg-slate-900 overflow-hidden p-0.5 border border-lilac-900/50">
+                            <div class="h-full bg-gradient-to-r from-indigo-500 to-softblue-400 rounded-full w-[90%]"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill Item 3 -->
+                <div class="p-6 sm:p-8 rounded-3xl bg-techdark-card border border-lilac-900/40 hover:border-lilac-500/60 transition-all box-glow-hover flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-mono font-bold text-pink-300 bg-purple-950 px-3 py-1 rounded-full border border-purple-800">03 / LINUX OS</span>
+                            <i class="fa-brands fa-linux text-2xl text-pink-400/60 group-hover:text-pink-300 transition-colors"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">3. Mengenal Sistem Operasi Linux</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                            Mengenal keunggulan open-source OS Linux Debian, perintah dasar Terminal CLI (`cd`, `ls`, `mkdir`, `nano`), hirarki direktori Linux (`/etc`, `/var`, `/home`), dan manajemen berkas.
+                        </p>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-xs text-slate-300">
+                            <span>Tingkat Penguasaan</span>
+                            <span class="text-pink-300 font-bold">Sedang Dipelajari (Kelas 11)</span>
+                        </div>
+                        <div class="w-full h-2.5 rounded-full bg-slate-900 overflow-hidden p-0.5 border border-lilac-900/50">
+                            <div class="h-full bg-gradient-to-r from-pink-500 to-lilac-400 rounded-full w-[82%]"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill Item 4 -->
+                <div class="p-6 sm:p-8 rounded-3xl bg-techdark-card border border-lilac-900/40 hover:border-lilac-500/60 transition-all box-glow-hover flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-mono font-bold text-lilac-300 bg-lilac-950 px-3 py-1 rounded-full border border-lilac-800">04 / ROUTING</span>
+                            <i class="fa-solid fa-route text-2xl text-lilac-400/60 group-hover:text-lilac-300 transition-colors"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">4. Mempelajari Konfigurasi Dasar Jaringan</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                            Mengatur alokasi IP Address statis dan dinamis (DHCP Server/Client), gateway jaringan, DNS Resolver, NAT Masquerade MikroTik, serta pengujian koneksi via Ping & Traceroute.
+                        </p>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-xs text-slate-300">
+                            <span>Tingkat Penguasaan</span>
+                            <span class="text-lilac-300 font-bold">88% (Berhasil Internet On)</span>
+                        </div>
+                        <div class="w-full h-2.5 rounded-full bg-slate-900 overflow-hidden p-0.5 border border-lilac-900/50">
+                            <div class="h-full bg-gradient-to-r from-lilac-500 to-softblue-400 rounded-full w-[88%]"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Contoh Gambar & Alat-Alat Jaringan TKJ -->
+    <section id="alat-jaringan" class="py-20 bg-techdark-card/80 border-t border-lilac-900/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-xs font-bold text-lilac-300 tracking-widest uppercase bg-lilac-950 px-3 py-1.5 rounded-full border border-lilac-800">
+                    📸 Perangkat & Peralatan Praktik TKJ
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Mengenal Alat-Alat Jaringan Komputer</h2>
+                <p class="text-slate-300 mt-2 text-sm">Berikut adalah contoh alat & perangkat jaringan utama yang dipelajari dan dipergunakan dalam praktik di laboratorium TKJ SMKN 9 Kab. Tangerang.</p>
+            </div>
+
+            <!-- Equipment Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-2 mb-10 text-xs font-semibold">
+                <button onclick="filterTools('all')" class="tool-btn active-tool px-4 py-2 rounded-xl bg-lilac-600 text-white shadow-md transition-all" id="btn-all">
+                    ✨ Semua Alat
+                </button>
+                <button onclick="filterTools('hardware')" class="tool-btn px-4 py-2 rounded-xl bg-techdark-card text-slate-300 border border-lilac-900/60 hover:border-lilac-500 transition-all" id="btn-hardware">
+                    🔌 Perangkat Aktif
+                </button>
+                <button onclick="filterTools('kabel')" class="tool-btn px-4 py-2 rounded-xl bg-techdark-card text-slate-300 border border-lilac-900/60 hover:border-lilac-500 transition-all" id="btn-kabel">
+                    ✂️ Kabel & Perkakas
+                </button>
+            </div>
+
+            <!-- Equipment Gallery Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Tool 1: Router MikroTik -->
+                <div class="tool-card hardware bg-[#0c0a15] border border-lilac-900/50 rounded-3xl overflow-hidden hover:border-lilac-500/70 transition-all duration-300 box-glow-hover flex flex-col justify-between group">
+                    <div class="relative overflow-hidden bg-gradient-to-br from-indigo-950 to-slate-950 p-6 flex items-center justify-center h-48 border-b border-lilac-900/40">
+                        <!-- Custom Visual SVG Illustration for Router MikroTik -->
+                        <div class="w-full h-full flex flex-col items-center justify-center relative">
+                            <div class="w-36 h-20 bg-slate-900 border-2 border-lilac-500/60 rounded-xl shadow-2xl p-2 flex flex-col justify-between relative group-hover:scale-105 transition-transform">
+                                <div class="flex justify-between items-center text-[10px] font-mono text-lilac-300">
+                                    <span>MikroTik hAP</span>
+                                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                                </div>
+                                <div class="grid grid-cols-5 gap-1 my-1">
+                                    <div class="h-4 bg-slate-950 border border-lilac-400/50 rounded flex items-center justify-center text-[8px] font-mono text-lilac-300">1</div>
+                                    <div class="h-4 bg-slate-950 border border-lilac-400/50 rounded flex items-center justify-center text-[8px] font-mono text-lilac-300">2</div>
+                                    <div class="h-4 bg-slate-950 border border-lilac-400/50 rounded flex items-center justify-center text-[8px] font-mono text-lilac-300">3</div>
+                                    <div class="h-4 bg-slate-950 border border-lilac-400/50 rounded flex items-center justify-center text-[8px] font-mono text-lilac-300">4</div>
+                                    <div class="h-4 bg-slate-950 border border-lilac-400/50 rounded flex items-center justify-center text-[8px] font-mono text-lilac-300">5</div>
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                                    <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                                    <span class="text-[8px] text-slate-400 font-mono ml-auto">RouterBOARD</span>
+                                </div>
+                            </div>
+                            <span class="absolute top-2 right-2 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-lilac-950/90 text-lilac-300 border border-lilac-700/50">Router</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-lilac-300 transition-colors">Router MikroTik (RouterBOARD)</h3>
+                            <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                                Perangkat utama yang berfungsi menghubungkan jaringan lokal (LAN) ke jaringan internet (WAN), mengatur alokasi bandwidth, DHCP Server, serta NAT Firewall.
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-lilac-900/40 text-[11px] text-softblue-300 font-mono">
+                            <i class="fa-solid fa-check-circle mr-1 text-emerald-400"></i> Dipakai pada Praktik Mikrotik Internet On
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tool 2: Switch Jaringan -->
+                <div class="tool-card hardware bg-[#0c0a15] border border-lilac-900/50 rounded-3xl overflow-hidden hover:border-lilac-500/70 transition-all duration-300 box-glow-hover flex flex-col justify-between group">
+                    <div class="relative overflow-hidden bg-gradient-to-br from-indigo-950 to-slate-950 p-6 flex items-center justify-center h-48 border-b border-lilac-900/40">
+                        <!-- Custom Visual SVG Illustration for Switch -->
+                        <div class="w-full h-full flex flex-col items-center justify-center relative">
+                            <div class="w-40 h-16 bg-slate-900 border-2 border-indigo-500/60 rounded-xl shadow-2xl p-2 flex flex-col justify-between group-hover:scale-105 transition-transform">
+                                <div class="flex justify-between items-center text-[10px] font-mono text-softblue-300">
+                                    <span>Switch 8-Port LAN</span>
+                                    <i class="fa-solid fa-server text-indigo-400"></i>
+                                </div>
+                                <div class="grid grid-cols-8 gap-0.5">
+                                    <div class="h-4 bg-slate-950 border border-emerald-400/60 rounded text-[7px] font-mono text-center text-emerald-300">1</div>
+                                    <div class="h-4 bg-slate-950 border border-emerald-400/60 rounded text-[7px] font-mono text-center text-emerald-300">2</div>
+                                    <div class="h-4 bg-slate-950 border border-emerald-400/60 rounded text-[7px] font-mono text-center text-emerald-300">3</div>
+                                    <div class="h-4 bg-slate-950 border border-emerald-400/60 rounded text-[7px] font-mono text-center text-emerald-300">4</div>
+                                    <div class="h-4 bg-slate-950 border border-slate-700 rounded text-[7px] font-mono text-center text-slate-500">5</div>
+                                    <div class="h-4 bg-slate-950 border border-slate-700 rounded text-[7px] font-mono text-center text-slate-500">6</div>
+                                    <div class="h-4 bg-slate-950 border border-slate-700 rounded text-[7px] font-mono text-center text-slate-500">7</div>
+                                    <div class="h-4 bg-slate-950 border border-slate-700 rounded text-[7px] font-mono text-center text-slate-500">8</div>
+                                </div>
+                            </div>
+                            <span class="absolute top-2 right-2 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-indigo-950/90 text-softblue-300 border border-indigo-700/50">Switch</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-softblue-300 transition-colors">Switch (Hub Jaringan)</h3>
+                            <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                                Alat konsentrator jaringan yang menghubungkan banyak komputer/klien dalam satu jaringan lokal (LAN) menggunakan kabel UTP.
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-lilac-900/40 text-[11px] text-softblue-300 font-mono">
+                            <i class="fa-solid fa-check-circle mr-1 text-emerald-400"></i> Konsentrasi Topologi Star
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tool 3: Tang Krimping & Cable Tester -->
+                <div class="tool-card kabel bg-[#0c0a15] border border-lilac-900/50 rounded-3xl overflow-hidden hover:border-lilac-500/70 transition-all duration-300 box-glow-hover flex flex-col justify-between group">
+                    <div class="relative overflow-hidden bg-gradient-to-br from-indigo-950 to-slate-950 p-6 flex items-center justify-center h-48 border-b border-lilac-900/40">
+                        <!-- Custom Visual Illustration Tang Crimping & Tester -->
+                        <div class="w-full h-full flex items-center justify-center gap-4 group-hover:scale-105 transition-transform">
+                            <!-- Cable Tester Box -->
+                            <div class="w-20 h-28 bg-slate-900 border-2 border-pink-500/60 rounded-xl p-2 flex flex-col justify-between shadow-xl">
+                                <div class="text-[8px] font-mono text-pink-300 text-center font-bold">LAN TESTER</div>
+                                <div class="grid grid-cols-2 gap-1 my-1">
+                                    <div class="space-y-1">
+                                        <div class="w-2 h-2 rounded-full bg-emerald-400 mx-auto"></div>
+                                        <div class="w-2 h-2 rounded-full bg-emerald-400 mx-auto"></div>
+                                        <div class="w-2 h-2 rounded-full bg-emerald-400 mx-auto"></div>
+                                        <div class="w-2 h-2 rounded-full bg-emerald-400 mx-auto"></div>
+                                    </div>
+                                    <div class="space-y-1">
+                                        <div class="w-2 h-2 rounded-full bg-emerald-400 mx-auto"></div>
+                                        <div class="w-2 h-2 rounded-full bg-emerald-400 mx-auto"></div>
+                                        <div class="w-2 h-2 rounded-full bg-emerald-400 mx-auto"></div>
+                                        <div class="w-2 h-2 rounded-full bg-emerald-400 mx-auto"></div>
+                                    </div>
+                                </div>
+                                <div class="text-[7px] font-mono text-center text-emerald-300 font-bold">8 PIN OK</div>
+                            </div>
+                            <!-- Tang Crimping Icon -->
+                            <div class="w-16 h-20 rounded-xl bg-purple-950/80 border border-purple-500/50 flex flex-col items-center justify-center text-pink-300">
+                                <i class="fa-solid fa-scissors text-2xl mb-1"></i>
+                                <span class="text-[8px] font-mono text-center">Crimping Tool</span>
+                            </div>
+                            <span class="absolute top-2 right-2 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-purple-950/90 text-pink-300 border border-purple-700/50">Perkakas</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-pink-300 transition-colors">Tang Krimping & LAN Tester</h3>
+                            <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                                Tang crimping digunakan untuk mengunci konektor RJ-45 pada kabel UTP, sedangkan LAN Tester dipakai menguji urutan 8-pin kabel berjalan presisi.
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-lilac-900/40 text-[11px] text-pink-300 font-mono">
+                            <i class="fa-solid fa-check-circle mr-1 text-emerald-400"></i> Praktik Pembuatan Kabel UTP
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tool 4: Kabel UTP Cat6 & RJ-45 -->
+                <div class="tool-card kabel bg-[#0c0a15] border border-lilac-900/50 rounded-3xl overflow-hidden hover:border-lilac-500/70 transition-all duration-300 box-glow-hover flex flex-col justify-between group">
+                    <div class="relative overflow-hidden bg-gradient-to-br from-indigo-950 to-slate-950 p-6 flex items-center justify-center h-48 border-b border-lilac-900/40">
+                        <div class="w-full h-full flex flex-col items-center justify-center relative group-hover:scale-105 transition-transform">
+                            <!-- Cable Illustration -->
+                            <div class="flex items-center gap-2">
+                                <div class="w-24 h-4 bg-indigo-600 rounded-full border border-lilac-400/50 flex items-center justify-end pr-1">
+                                    <div class="w-3 h-2 bg-amber-400 rounded-sm"></div>
+                                </div>
+                                <div class="w-8 h-8 bg-slate-900 border-2 border-lilac-400 rounded-lg flex items-center justify-center text-lilac-300 text-xs font-mono font-bold shadow-lg">
+                                    RJ45
+                                </div>
+                            </div>
+                            <div class="mt-3 flex gap-1">
+                                <span class="w-2 h-2 rounded-full bg-orange-500"></span>
+                                <span class="w-2 h-2 rounded-full bg-orange-300"></span>
+                                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                                <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                                <span class="w-2 h-2 rounded-full bg-blue-300"></span>
+                                <span class="w-2 h-2 rounded-full bg-emerald-300"></span>
+                                <span class="w-2 h-2 rounded-full bg-amber-700"></span>
+                                <span class="w-2 h-2 rounded-full bg-amber-200"></span>
+                            </div>
+                            <span class="absolute top-2 right-2 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-lilac-950/90 text-lilac-300 border border-lilac-700/50">Media Transmisi</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-lilac-300 transition-colors">Kabel UTP Cat5e/6 & Konektor RJ-45</h3>
+                            <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                                Media transmisi fisik berupa 8 helai kawat tembaga berpilin yang disusun sesuai standar T568A / T568B untuk urutan Straight & Cross.
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-lilac-900/40 text-[11px] text-lilac-300 font-mono">
+                            <i class="fa-solid fa-check-circle mr-1 text-emerald-400"></i> Standar Straight & Cross
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tool 5: Access Point Wi-Fi -->
+                <div class="tool-card hardware bg-[#0c0a15] border border-lilac-900/50 rounded-3xl overflow-hidden hover:border-lilac-500/70 transition-all duration-300 box-glow-hover flex flex-col justify-between group">
+                    <div class="relative overflow-hidden bg-gradient-to-br from-indigo-950 to-slate-950 p-6 flex items-center justify-center h-48 border-b border-lilac-900/40">
+                        <div class="w-full h-full flex flex-col items-center justify-center relative group-hover:scale-105 transition-transform">
+                            <!-- Access Point Illustration -->
+                            <div class="w-28 h-28 rounded-full bg-slate-900 border-2 border-softblue-400/60 flex flex-col items-center justify-center shadow-2xl relative">
+                                <i class="fa-solid fa-wifi text-3xl text-softblue-300 animate-pulse"></i>
+                                <span class="text-[8px] font-mono text-slate-400 mt-1">Access Point</span>
+                            </div>
+                            <span class="absolute top-2 right-2 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-indigo-950/90 text-softblue-300 border border-indigo-700/50">Wireless</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-softblue-300 transition-colors">Access Point (Wireless LAN)</h3>
+                            <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                                Perangkat jaringan nirkabel yang memancarkan sinyal Wi-Fi agar smartphone dan laptop terhubung tanpa kabel ke jaringan lokal.
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-lilac-900/40 text-[11px] text-softblue-300 font-mono">
+                            <i class="fa-solid fa-check-circle mr-1 text-emerald-400"></i> Jaringan Wi-Fi Hotspot
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tool 6: Fiber Optic & Splicer -->
+                <div class="tool-card kabel bg-[#0c0a15] border border-lilac-900/50 rounded-3xl overflow-hidden hover:border-lilac-500/70 transition-all duration-300 box-glow-hover flex flex-col justify-between group">
+                    <div class="relative overflow-hidden bg-gradient-to-br from-indigo-950 to-slate-950 p-6 flex items-center justify-center h-48 border-b border-lilac-900/40">
+                        <div class="w-full h-full flex flex-col items-center justify-center relative group-hover:scale-105 transition-transform">
+                            <div class="w-32 h-20 bg-slate-900 border-2 border-pink-500/60 rounded-xl p-2 flex flex-col items-center justify-center shadow-xl">
+                                <i class="fa-solid fa-bolt-lightning text-2xl text-pink-300 mb-1"></i>
+                                <span class="text-[9px] font-mono text-pink-200">Fusion Splicer FO</span>
+                            </div>
+                            <span class="absolute top-2 right-2 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-purple-950/90 text-pink-300 border border-purple-700/50">Serat Optik</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-pink-300 transition-colors">Kabel Fiber Optic & Splicer</h3>
+                            <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                                Teknologi transmisi serat kaca menggunakan gelombang cahaya untuk kecepatan jaringan sangat tinggi, dipadukan mesin penyambung (Splicer).
+                            </p>
+                        </div>
+                        <div class="pt-3 border-t border-lilac-900/40 text-[11px] text-pink-300 font-mono">
+                            <i class="fa-solid fa-check-circle mr-1 text-emerald-400"></i> Kecepatan Tinggi Berbasis Cahaya
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Pengalaman & Praktik Pembelajaran Section -->
+    <section id="pengalaman" class="py-20 bg-[#0c0a15]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold text-lilac-300 tracking-widest uppercase bg-lilac-950 px-3 py-1 rounded-full border border-lilac-800">💪 Bukti Praktik Langsung</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Pengalaman Pembelajaran Saya</h2>
+                <p class="text-slate-300 mt-2 text-sm">Pencapaian nyata yang sudah berhasil diselesaikan dalam lab praktik TKJ SMKN 9 Kab. Tangerang.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <!-- Experience 1: Merakit PC -->
+                <div class="bg-techdark-card border border-lilac-900/40 rounded-3xl p-6 flex flex-col justify-between hover:border-lilac-500/60 transition-all box-glow-hover">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-lilac-950 border border-lilac-700/60 flex items-center justify-center text-lilac-300 text-xl mb-4">
+                            <i class="fa-solid fa-desktop"></i>
+                        </div>
+                        <span class="text-xs font-mono text-lilac-300 font-semibold uppercase">Pencapaian 1</span>
+                        <h3 class="text-xl font-bold text-white mt-1 mb-3">Merakit PC Sampai Menyala</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Mampu merakit unit PC desktop dari komponen terpisah, memasang processor, heatsink, dual channel RAM, kabel front panel & PSU, hingga booting sukses ke layar BIOS.
+                        </p>
+
+                        <!-- Interactive Assembly Checklist -->
+                        <div class="bg-[#0c0a15] p-4 rounded-2xl border border-lilac-900/60 space-y-2 text-xs font-mono">
+                            <div class="text-slate-200 font-bold mb-2">Checklist Perakitan:</div>
+                            <div class="flex items-center gap-2 text-emerald-400">
+                                <i class="fa-solid fa-square-check"></i> Pasang Processor & Thermal Paste
+                            </div>
+                            <div class="flex items-center gap-2 text-emerald-400">
+                                <i class="fa-solid fa-square-check"></i> Pasang Modul DDR4 RAM
+                            </div>
+                            <div class="flex items-center gap-2 text-emerald-400">
+                                <i class="fa-solid fa-square-check"></i> Wiring 24-Pin ATX & Front Panel
+                            </div>
+                            <div class="flex items-center gap-2 text-softblue-300">
+                                <i class="fa-solid fa-power-off text-emerald-400"></i> Press Power -> POST Display OK!
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="openModal('pc')" class="mt-6 w-full py-3 rounded-2xl bg-lilac-950 hover:bg-lilac-900 text-lilac-200 border border-lilac-700/60 text-xs font-bold transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <span>Detail Step Perakitan</span>
+                    </button>
+                </div>
+
+                <!-- Experience 2: MikroTik -->
+                <div class="bg-techdark-card border border-lilac-900/40 rounded-3xl p-6 flex flex-col justify-between hover:border-lilac-500/60 transition-all box-glow-hover">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-950 border border-indigo-700/60 flex items-center justify-center text-softblue-300 text-xl mb-4">
+                            <i class="fa-solid fa-router"></i>
+                        </div>
+                        <span class="text-xs font-mono text-softblue-300 font-semibold uppercase">Pencapaian 2</span>
+                        <h3 class="text-xl font-bold text-white mt-1 mb-3">Konfigurasi MikroTik Internet On</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Mampu melakukan konfigurasi dasar RouterBOARD via Winbox, mengatur Ether1 (DHCP Client), Ether2 (Gateway LAN), NAT Masquerade, hingga klien bisa browsing internet.
+                        </p>
+
+                        <!-- Simulated Ping Box -->
+                        <div class="bg-[#0c0a15] p-4 rounded-2xl border border-lilac-900/60 space-y-1 text-xs font-mono text-slate-300">
+                            <div class="text-slate-400 font-bold mb-1">Terminal Ping Result:</div>
+                            <div class="text-emerald-400">$ ping 8.8.8.8 -c 2</div>
+                            <div class="text-slate-400">64 bytes from 8.8.8.8: time=11ms</div>
+                            <div class="text-softblue-300 font-semibold">Status: Internet Connected!</div>
+                        </div>
+                    </div>
+
+                    <button onclick="openModal('mikrotik')" class="mt-6 w-full py-3 rounded-2xl bg-indigo-950 hover:bg-indigo-900 text-softblue-200 border border-indigo-700/60 text-xs font-bold transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <span>Detail Step MikroTik</span>
+                    </button>
+                </div>
+
+                <!-- Experience 3: Linux Debian -->
+                <div class="bg-techdark-card border border-lilac-900/40 rounded-3xl p-6 flex flex-col justify-between hover:border-lilac-500/60 transition-all box-glow-hover">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-purple-950 border border-purple-700/60 flex items-center justify-center text-pink-300 text-xl mb-4">
+                            <i class="fa-brands fa-linux"></i>
+                        </div>
+                        <span class="text-xs font-mono text-pink-300 font-semibold uppercase">Sedang Dipelajari</span>
+                        <h3 class="text-xl font-bold text-white mt-1 mb-3">Konfigurasi Linux Debian (Kelas 11)</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Saat ini sedang mendalami Sistem Operasi Server Linux Debian 11 di kelas 11. Belajar perintah CLI terminal, nano editor, dan pengoperasian jaringan.
+                        </p>
+
+                        <!-- Linux Command Snippet -->
+                        <div class="bg-[#0c0a15] p-4 rounded-2xl border border-lilac-900/60 space-y-1 text-xs font-mono text-slate-300">
+                            <div class="text-slate-400 font-bold mb-1">Perintah Debian 11:</div>
+                            <div class="text-pink-300">root@debian:~# nano /etc/network/interfaces</div>
+                            <div class="text-slate-400">iface eth0 inet static</div>
+                            <div class="text-slate-400">  address 192.168.10.1/24</div>
+                        </div>
+                    </div>
+
+                    <button onclick="openModal('debian')" class="mt-6 w-full py-3 rounded-2xl bg-purple-950 hover:bg-purple-900 text-pink-200 border border-purple-700/60 text-xs font-bold transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <span>Detail Topik Kelas 11</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive CLI Terminal Section -->
+    <section id="terminal" class="py-20 bg-techdark-card/70 border-t border-lilac-900/40">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-lilac-950 border border-lilac-700/60 text-lilac-300 text-xs font-mono mb-3">
+                    <i class="fa-solid fa-terminal"></i> SIMULATOR CLI INTERAKTIF
+                </span>
+                <h2 class="text-3xl font-extrabold text-white">Terminal Interactive TKJ BISA! ✨</h2>
+                <p class="text-slate-300 text-sm mt-2">Cobalah mengetik perintah seperti di konsol Linux / MikroTik di bawah ini.</p>
+            </div>
+
+            <!-- Terminal Window -->
+            <div class="bg-[#0c0a15] border border-lilac-800/60 rounded-3xl overflow-hidden shadow-2xl box-glow">
+                <!-- Terminal Header Bar -->
+                <div class="bg-[#151128] px-5 py-3.5 border-b border-lilac-900/60 flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-pink-400"></span>
+                        <span class="w-3 h-3 rounded-full bg-purple-400"></span>
+                        <span class="w-3 h-3 rounded-full bg-softblue-400"></span>
+                        <span class="ml-2 text-xs font-mono text-lilac-300">siswi@smkn9-tangerang:~$</span>
+                    </div>
+                    <span class="text-xs font-mono text-slate-400 hidden sm:inline">Linux Debian CLI v11</span>
+                </div>
+
+                <!-- Terminal Console Body -->
+                <div id="terminal-body" class="p-6 h-80 overflow-y-auto font-mono text-xs sm:text-sm text-slate-200 space-y-2 terminal-scroll bg-[#080611]">
+                    <div class="text-lilac-400 font-bold">============================================================</div>
+                    <div class="text-lilac-300 font-bold">  WELCOME TO TKJ BISA INTERACTIVE CLI SIMULATOR ✨  </div>
+                    <div class="text-slate-400">  SMKN 9 Kabupaten Tangerang - Jurusan Komputer & Jaringan</div>
+                    <div class="text-lilac-400 font-bold">============================================================</div>
+                    <div class="text-slate-300 pt-2">Ketik <span class="text-amber-300 font-bold">'help'</span> untuk melihat daftar perintah yang tersedia.</div>
+                    <div class="border-b border-lilac-900/50 my-2"></div>
+                </div>
+
+                <!-- Terminal Input Area -->
+                <form id="terminal-form" class="bg-[#151128] px-4 py-3 border-t border-lilac-900/60 flex items-center gap-2">
+                    <span class="text-softblue-300 font-mono font-bold text-sm">siswi@smkn9:~$</span>
+                    <input type="text" id="terminal-input" autocomplete="off" placeholder="Ketik perintah di sini (contoh: help, neofetch, mikrotik)..." class="flex-1 bg-transparent border-none text-slate-100 font-mono text-sm focus:outline-none focus:ring-0">
+                    <button type="submit" class="px-4 py-2 bg-gradient-to-r from-lilac-500 to-indigo-600 text-white font-bold rounded-xl text-xs font-mono transition-colors hover:opacity-90">
+                        Kirim
+                    </button>
+                </form>
+            </div>
+
+            <!-- Terminal Quick Hint Buttons -->
+            <div class="mt-4 flex flex-wrap gap-2 justify-center text-xs font-mono">
+                <span class="text-slate-400">Tombol Cepat:</span>
+                <button onclick="runCommand('neofetch')" class="px-3 py-1 rounded-lg bg-techdark-card border border-lilac-800 hover:border-lilac-400 text-lilac-300">neofetch</button>
+                <button onclick="runCommand('mikrotik')" class="px-3 py-1 rounded-lg bg-techdark-card border border-lilac-800 hover:border-lilac-400 text-softblue-300">mikrotik</button>
+                <button onclick="runCommand('racik-pc')" class="px-3 py-1 rounded-lg bg-techdark-card border border-lilac-800 hover:border-lilac-400 text-lilac-300">racik-pc</button>
+                <button onclick="runCommand('ping google.com')" class="px-3 py-1 rounded-lg bg-techdark-card border border-lilac-800 hover:border-lilac-400 text-emerald-300">ping google.com</button>
+                <button onclick="runCommand('clear')" class="px-3 py-1 rounded-lg bg-techdark-card border border-red-900/80 hover:border-red-400 text-pink-400">clear</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kuis Singkat TKJ Section -->
+    <section id="kuis" class="py-20 bg-[#0c0a15]">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-bold text-lilac-300 uppercase tracking-widest bg-lilac-950 px-3 py-1 rounded-full border border-lilac-800">🎯 Uji Pengetahuan</span>
+                <h2 class="text-3xl font-extrabold text-white mt-2">Kuis Mini TKJ BISA!</h2>
+                <p class="text-slate-300 text-sm mt-2">Uji pemahaman dasar komputer & jaringan kamu dengan 3 pertanyaan seru berikut!</p>
+            </div>
+
+            <div class="bg-techdark-card border border-lilac-800/60 rounded-3xl p-6 sm:p-8 shadow-2xl box-glow">
+                <div id="quiz-container">
+                    <div class="flex justify-between items-center pb-4 border-b border-lilac-900/60 mb-6">
+                        <span id="quiz-step" class="text-xs font-mono font-bold text-lilac-300">Pertanyaan 1 dari 3</span>
+                        <span id="quiz-score-badge" class="text-xs font-mono text-softblue-300 bg-indigo-950 px-3 py-1 rounded-full border border-indigo-800">Skor: 0</span>
+                    </div>
+
+                    <h3 id="quiz-question" class="text-lg font-bold text-white mb-6">Loading pertanyaan...</h3>
+
+                    <div id="quiz-options" class="space-y-3">
+                        <!-- Options injected dynamically by JS -->
+                    </div>
+
+                    <div id="quiz-feedback" class="mt-6 hidden p-4 rounded-2xl text-xs font-mono"></div>
+
+                    <div class="mt-6 flex justify-end">
+                        <button id="quiz-next-btn" onclick="nextQuestion()" class="hidden px-6 py-3 rounded-2xl bg-gradient-to-r from-lilac-500 to-indigo-600 text-white font-bold text-xs hover:opacity-90 transition-all">
+                            Lanjut Pertanyaan <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-[#080611] border-t border-lilac-900/40 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-12 border-b border-lilac-900/40">
+                
+                <!-- Col 1: Brand Info -->
+                <div class="md:col-span-6 space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-lilac-500 to-indigo-600 flex items-center justify-center text-slate-950 font-bold">
+                            <i class="fa-solid fa-heart-pulse text-lg"></i>
+                        </div>
+                        <span class="font-extrabold text-2xl text-white">TKJ <span class="text-lilac-300">BISA! ✨</span></span>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed max-w-md">
+                        Website portofolio siswi SMKN 9 Kabupaten Tangerang. Dedikasi dalam mempelajari dasar-dasar perangkat keras, jaringan komputer, MikroTik, dan sistem operasi Linux.
+                    </p>
+                    <div class="flex flex-wrap items-center gap-3 text-slate-300 pt-2 text-xs">
+                        <span class="px-3 py-2 rounded-xl bg-techdark-card border border-lilac-900/60"><i class="fa-solid fa-location-dot text-lilac-400 mr-1.5"></i> Kab. Tangerang, Banten</span>
+                        <span class="px-3 py-2 rounded-xl bg-techdark-card border border-lilac-900/60"><i class="fa-solid fa-school text-softblue-300 mr-1.5"></i> SMKN 9 Kab. Tangerang</span>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div class="md:col-span-3 space-y-3">
+                    <h4 class="text-white font-bold text-sm">Navigasi Cepat</h4>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li><a href="#beranda" class="hover:text-lilac-300 transition-colors">Beranda</a></li>
+                        <li><a href="#tentang" class="hover:text-lilac-300 transition-colors">Tentang Pembelajaran</a></li>
+                        <li><a href="#keahlian" class="hover:text-lilac-300 transition-colors">Keahlian Utama</a></li>
+                        <li><a href="#alat-jaringan" class="hover:text-lilac-300 transition-colors">Galeri Alat Jaringan</a></li>
+                        <li><a href="#pengalaman" class="hover:text-lilac-300 transition-colors">Pengalaman Praktik</a></li>
+                        <li><a href="#terminal" class="hover:text-lilac-300 transition-colors">CLI Terminal Simulator</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Send Greetings Form -->
+                <div class="md:col-span-3 space-y-3">
+                    <h4 class="text-white font-bold text-sm">Kirim Semangat / Pesan</h4>
+                    <form id="contact-form" class="space-y-2">
+                        <input type="text" id="sender-name" required placeholder="Nama Kamu / Teman / Guru" class="w-full px-3.5 py-2.5 rounded-xl bg-techdark-card border border-lilac-900/60 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-lilac-400">
+                        <textarea id="sender-msg" required rows="2" placeholder="Tuliskan kata semangat..." class="w-full px-3.5 py-2.5 rounded-xl bg-techdark-card border border-lilac-900/60 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-lilac-400"></textarea>
+                        <button type="submit" class="w-full py-2.5 bg-gradient-to-r from-lilac-500 to-indigo-600 text-white font-bold rounded-xl text-xs hover:opacity-90 transition-opacity">
+                            Kirim Pesan ✨ <i class="fa-solid fa-paper-plane ml-1"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400">
+                <p>© 2026 Siswi TKJ - SMKN 9 Kabupaten Tangerang. TKJ BISA!</p>
+                <p class="mt-2 sm:mt-0 font-mono text-lilac-300">Teknik Komputer & Jaringan • Kelas 11</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Detail Modals -->
+    <div id="modal-backdrop" class="fixed inset-0 bg-[#080611]/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-techdark-card border border-lilac-800/60 rounded-3xl max-w-xl w-full p-6 sm:p-8 relative shadow-2xl">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <div id="modal-content">
+                <!-- Injected via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-lilac-950 border border-lilac-700/80 text-lilac-200 px-5 py-3.5 rounded-2xl shadow-2xl hidden flex items-center gap-3">
+        <i class="fa-solid fa-circle-check text-softblue-300 text-xl"></i>
+        <span id="toast-message" class="text-xs font-semibold">Pesan berhasil dikirim!</span>
+    </div>
+
+    <script>
+        // --- 1. Typing Banner Effect ---
+        const typingSentences = [
+            "Siswi SMKN 9 Kabupaten Tangerang",
+            "Mampu Merakit Komputer Sampai Booting",
+            "Mampu Konfigurasi MikroTik Internet On",
+            "Sedang Mempelajari Linux Debian Kelas 11",
+            "TKJ BISA! Semangat Belajar Teknologi ✨"
+        ];
+        let sentenceIdx = 0;
+        let charIdx = 0;
+        let isDeleting = false;
+        const typingSpeed = 70;
+        const typingElement = document.getElementById('typing-text');
+
+        function typeLoop() {
+            const currentSentence = typingSentences[sentenceIdx];
+            if (isDeleting) {
+                typingElement.textContent = currentSentence.substring(0, charIdx - 1);
+                charIdx--;
+            } else {
+                typingElement.textContent = currentSentence.substring(0, charIdx + 1);
+                charIdx++;
+            }
+
+            if (!isDeleting && charIdx === currentSentence.length) {
+                setTimeout(() => isDeleting = true, 2000);
+            } else if (isDeleting && charIdx === 0) {
+                isDeleting = false;
+                sentenceIdx = (sentenceIdx + 1) % typingSentences.length;
+            }
+
+            const speed = isDeleting ? 40 : typingSpeed;
+            setTimeout(typeLoop, speed);
+        }
+
+        // --- 2. Interactive Network Canvas (Lilac particles) ---
+        const canvas = document.getElementById('network-canvas');
+        const ctx = canvas.getContext('2d');
+        let nodes = [];
+
+        function resizeCanvas() {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+            initNodes();
+        }
+
+        function initNodes() {
+            nodes = [];
+            const count = Math.floor((canvas.width * canvas.height) / 13000);
+            for (let i = 0; i < count; i++) {
+                nodes.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    vx: (Math.random() - 0.5) * 0.7,
+                    vy: (Math.random() - 0.5) * 0.7,
+                    radius: Math.random() * 2 + 1.2
+                });
+            }
+        }
+
+        function drawNodes() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            for (let i = 0; i < nodes.length; i++) {
+                for (let j = i + 1; j < nodes.length; j++) {
+                    const dx = nodes[i].x - nodes[j].x;
+                    const dy = nodes[i].y - nodes[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < 115) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(167, 139, 250, ${1 - dist / 115})`;
+                        ctx.lineWidth = 0.6;
+                        ctx.moveTo(nodes[i].x, nodes[i].y);
+                        ctx.lineTo(nodes[j].x, nodes[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            nodes.forEach(node => {
+                ctx.beginPath();
+                ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+                ctx.fillStyle = '#a78bfa';
+                ctx.fill();
+
+                node.x += node.vx;
+                node.y += node.vy;
+
+                if (node.x < 0 || node.x > canvas.width) node.vx *= -1;
+                if (node.y < 0 || node.y > canvas.height) node.vy *= -1;
+            });
+
+            requestAnimationFrame(drawNodes);
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+
+        // --- 3. Equipment Tools Filter ---
+        function filterTools(category) {
+            const cards = document.querySelectorAll('.tool-card');
+            const btns = document.querySelectorAll('.tool-btn');
+
+            btns.forEach(btn => {
+                btn.classList.remove('bg-lilac-600', 'text-white');
+                btn.classList.add('bg-techdark-card', 'text-slate-300');
+            });
+
+            if (category === 'all') {
+                document.getElementById('btn-all').classList.add('bg-lilac-600', 'text-white');
+                cards.forEach(card => card.classList.remove('hidden'));
+            } else if (category === 'hardware') {
+                document.getElementById('btn-hardware').classList.add('bg-lilac-600', 'text-white');
+                cards.forEach(card => {
+                    if (card.classList.contains('hardware')) card.classList.remove('hidden');
+                    else card.classList.add('hidden');
+                });
+            } else if (category === 'kabel') {
+                document.getElementById('btn-kabel').classList.add('bg-lilac-600', 'text-white');
+                cards.forEach(card => {
+                    if (card.classList.contains('kabel')) card.classList.remove('hidden');
+                    else card.classList.add('hidden');
+                });
+            }
+        }
+
+        // --- 4. Interactive CLI Terminal Simulator ---
+        const terminalBody = document.getElementById('terminal-body');
+        const terminalForm = document.getElementById('terminal-form');
+        const terminalInput = document.getElementById('terminal-input');
+
+        const commands = {
+            'help': `Perintah yang dapat digunakan:
+  • <span class="text-lilac-300">neofetch</span>     : Statistik sistem & profil siswi TKJ
+  • <span class="text-lilac-300">mikrotik</span>     : Detail pengalaman konfigurasi MikroTik
+  • <span class="text-lilac-300">racik-pc</span>     : Langkah-langkah merakit PC desktop
+  • <span class="text-lilac-300">debian</span>       : Pembelajaran Linux Debian kelas 11
+  • <span class="text-lilac-300">ping [host]</span>  : Menguji konektivitas jaringan (contoh: ping google.com)
+  • <span class="text-lilac-300">smkn9</span>        : Profil singkat SMKN 9 Kab. Tangerang
+  • <span class="text-lilac-300">clear</span>        : Membersihkan layar konsol terminal`,
+            
+            'neofetch': `
+<span class="text-lilac-300 font-bold">          .---.</span>        <span class="text-softblue-300 font-bold">SISWI @ SMKN 9 KABUPATEN TANGERANG</span>
+<span class="text-lilac-300 font-bold">         /     \\</span>       ----------------------------------
+<span class="text-lilac-300 font-bold">        |   🌸  |</span>      <span class="text-slate-400">OS:</span> Linux Debian 11 / RouterOS MikroTik
+<span class="text-lilac-300 font-bold">        |       |</span>      <span class="text-slate-400">Jurusan:</span> Teknik Komputer dan Jaringan (TKJ)
+<span class="text-lilac-300 font-bold">         \\     /</span>       <span class="text-slate-400">Tingkat:</span> Kelas 11 (Tahun Ajaran Aktif)
+<span class="text-lilac-300 font-bold">          '---'</span>        <span class="text-slate-400">Motto:</span> TKJ BISA! Terampil, Mandiri & Estetik ✨`,
+
+            'mikrotik': `<span class="text-softblue-300 font-bold">[ MIKROTIK ROUTERBOARD CONFIGURATION ]</span>
+1. Login Winbox via MAC Address RouterBOARD.
+2. IP -> DHCP Client -> interface=ether1 (Mendapatkan IP dari ISP).
+3. IP -> Address -> Add 192.168.100.1/24 interface=ether2 (Gateway Klien).
+4. IP -> Firewall -> NAT -> Add action=masquerade chain=srcnat out-interface=ether1.
+5. IP -> DHCP Server -> DHCP Setup interface=ether2.
+<span class="text-emerald-400">RESULT: PC Klien terhubung kabel LAN langsung bisa browsing internet!</span>`,
+
+            'racik-pc': `<span class="text-lilac-300 font-bold">[ PROSES MERAKIT KOMPUTER ]</span>
+1. Menyiapkan Motherboard & pasang Processor sesuai socket notch.
+2. Mengoleskan Thermal Paste secukupnya & pasang HSF (Heatsink Fan).
+3. Memasang modul RAM DDR4 pada slot Dual Channel hingga 'klik'.
+4. Memasang Power Supply Unit (PSU) pada Casing.
+5. Menyambungkan kabel Power 24-Pin ATX & 8-Pin CPU.
+6. Memasang Front Panel (Power SW, Reset SW, Power LED, HDD LED).
+<span class="text-emerald-400">RESULT: Tekan Power -> Kipas berputar -> Tampil Layar POST BIOS!</span>`,
+
+            'debian': `<span class="text-pink-300 font-bold">[ PEMBELAJARAN LINUX DEBIAN KELAS 11 ]</span>
+• Konfigurasi Network: <span class="text-amber-300">nano /etc/network/interfaces</span>
+• Restart Service Network: <span class="text-amber-300">systemctl restart networking</span>
+• Pengecekan IP: <span class="text-amber-300">ip a</span> atau <span class="text-amber-300">ifconfig</span>
+• Instalasi Paket Server: <span class="text-amber-300">apt update && apt install apache2 bind9</span>`,
+
+            'smkn9': `<span class="text-softblue-300 font-bold">[ SMKN 9 KABUPATEN TANGERANG ]</span>
+Sekolah Menengah Kejuruan Negeri yang mencetak lulusan kompeten, berkarakter, dan siap kerja di bidang TIK.
+Jurusan TKJ dibekali dengan Laboratorium Komputer lengkap dan peralatan jaringan standar industri.`
+        };
+
+        function printTerminal(output, isCmd = false) {
+            const div = document.createElement('div');
+            if (isCmd) {
+                div.className = 'text-lilac-200 font-bold mt-2';
+                div.innerHTML = `<span class="text-softblue-300">siswi@smkn9:~$</span> ${output}`;
+            } else {
+                div.className = 'text-slate-300 whitespace-pre-wrap leading-relaxed pl-2 border-l-2 border-lilac-800 my-1';
+                div.innerHTML = output;
+            }
+            terminalBody.appendChild(div);
+            terminalBody.scrollTop = terminalBody.scrollHeight;
+        }
+
+        function runCommand(cmdText) {
+            const cleanCmd = cmdText.trim();
+            printTerminal(cleanCmd, true);
+
+            if (cleanCmd.toLowerCase() === 'clear') {
+                terminalBody.innerHTML = '';
+                return;
+            }
+
+            if (cleanCmd.toLowerCase().startsWith('ping')) {
+                const parts = cleanCmd.split(' ');
+                const host = parts[1] || 'google.com';
+                printTerminal(`<span class="text-slate-400">PING ${host} (142.250.190.46) 56(84) bytes of data.</span>
+64 bytes from ${host}: icmp_seq=1 ttl=116 time=11.2 ms
+64 bytes from ${host}: icmp_seq=2 ttl=116 time=10.8 ms
+<span class="text-emerald-400 font-bold">--- ${host} ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time OK!</span>`);
+                return;
+            }
+
+            if (commands[cleanCmd.toLowerCase()]) {
+                printTerminal(commands[cleanCmd.toLowerCase()]);
+            } else {
+                printTerminal(`<span class="text-pink-400">Perintah '${cleanCmd}' tidak ditemukan.</span> Ketik <span class="text-amber-300 font-bold">'help'</span> untuk bantuan.`);
+            }
+        }
+
+        terminalForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const val = terminalInput.value;
+            if (val.trim()) {
+                runCommand(val);
+                terminalInput.value = '';
+            }
+        });
+
+        // --- 5. Interactive TKJ Quiz Engine ---
+        const quizData = [
+            {
+                q: "1. Komponen hardware komputer yang berfungsi sebagai 'otak' utama untuk memproses data adalah...",
+                options: ["RAM (Random Access Memory)", "Processor (CPU)", "Harddisk / SSD", "Power Supply Unit"],
+                correct: 1,
+                exp: "Benar! Processor (CPU) adalah unit pemroses pusat yang mengeksekusi instruksi komputer."
+            },
+            {
+                q: "2. Fitur pada MikroTik yang berfungsi untuk membagikan alamat IP secara otomatis kepada PC klien adalah...",
+                options: ["NAT Masquerade", "DNS Server", "DHCP Server", "Firewall Filter"],
+                correct: 2,
+                exp: "Tepat! DHCP Server secara otomatis memberikan alokasi IP ke perangkat klien."
+            },
+            {
+                q: "3. Di Linux Debian, perintah CLI yang digunakan untuk menyunting/mendedit isi berkas teks adalah...",
+                options: ["nano", "ls", "mkdir", "cd"],
+                correct: 0,
+                exp: "Sip! 'nano' adalah teks editor sederhana berbasis terminal di Linux Debian."
+            }
+        ];
+
+        let currentQuiz = 0;
+        let score = 0;
+
+        function loadQuestion() {
+            const data = quizData[currentQuiz];
+            document.getElementById('quiz-step').textContent = `Pertanyaan ${currentQuiz + 1} dari ${quizData.length}`;
+            document.getElementById('quiz-question').textContent = data.q;
+            
+            const optionsContainer = document.getElementById('quiz-options');
+            optionsContainer.innerHTML = '';
+
+            data.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left p-4 rounded-2xl bg-[#0c0a15] border border-lilac-900/60 hover:border-lilac-400 text-slate-200 text-sm font-medium transition-all flex items-center justify-between group";
+                btn.innerHTML = `
+                    <span>${opt}</span>
+                    <i class="fa-regular fa-circle text-slate-600 group-hover:text-lilac-300"></i>
+                `;
+                btn.onclick = () => selectAnswer(idx);
+                optionsContainer.appendChild(btn);
+            });
+
+            document.getElementById('quiz-feedback').classList.add('hidden');
+            document.getElementById('quiz-next-btn').classList.add('hidden');
+        }
+
+        function selectAnswer(idx) {
+            const data = quizData[currentQuiz];
+            const feedbackEl = document.getElementById('quiz-feedback');
+            const optionsButtons = document.getElementById('quiz-options').children;
+
+            for (let btn of optionsButtons) {
+                btn.disabled = true;
+                btn.classList.add('opacity-60', 'cursor-not-allowed');
+            }
+
+            if (idx === data.correct) {
+                score += 33.3;
+                optionsButtons[idx].classList.remove('bg-[#0c0a15]', 'border-lilac-900/60', 'opacity-60');
+                optionsButtons[idx].classList.add('bg-emerald-950', 'border-emerald-500', 'text-emerald-200');
+                feedbackEl.className = "mt-6 p-4 rounded-2xl text-xs font-mono bg-emerald-950/80 border border-emerald-800 text-emerald-200";
+                feedbackEl.innerHTML = `<i class="fa-solid fa-circle-check mr-2 text-emerald-300"></i> ${data.exp}`;
+            } else {
+                optionsButtons[idx].classList.remove('bg-[#0c0a15]', 'border-lilac-900/60', 'opacity-60');
+                optionsButtons[idx].classList.add('bg-pink-950', 'border-pink-500', 'text-pink-200');
+                
+                optionsButtons[data.correct].classList.remove('bg-[#0c0a15]', 'border-lilac-900/60', 'opacity-60');
+                optionsButtons[data.correct].classList.add('bg-emerald-950', 'border-emerald-500', 'text-emerald-200');
+
+                feedbackEl.className = "mt-6 p-4 rounded-2xl text-xs font-mono bg-pink-950/80 border border-pink-800 text-pink-200";
+                feedbackEl.innerHTML = `<i class="fa-solid fa-circle-xmark mr-2 text-pink-400"></i> Kurang tepat. ${data.exp}`;
+            }
+
+            document.getElementById('quiz-score-badge').textContent = `Skor: ${Math.round(score)}`;
+            feedbackEl.classList.remove('hidden');
+            document.getElementById('quiz-next-btn').classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            currentQuiz++;
+            if (currentQuiz < quizData.length) {
+                loadQuestion();
+            } else {
+                showQuizResult();
+            }
+        }
+
+        function showQuizResult() {
+            const container = document.getElementById('quiz-container');
+            const finalScore = Math.round(score);
+            container.innerHTML = `
+                <div class="text-center py-8 space-y-4">
+                    <div class="w-20 h-20 bg-gradient-to-tr from-lilac-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto text-white text-3xl font-extrabold shadow-lg shadow-lilac-500/30">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white">Selamat! Kuis Selesai ✨</h3>
+                    <p class="text-slate-300 text-sm">Skor Akhir Pemahaman TKJ Kamu:</p>
+                    <div class="text-5xl font-black text-lilac-300 font-mono">${finalScore} / 100</div>
+                    <p class="text-xs text-slate-300 max-w-md mx-auto">
+                        ${finalScore >= 90 ? "Luar biasa! Kamu berbakat menjadi Ahli Komputer & Jaringan!" : "Bagus sekali! Terus tingkatkan semangat belajar di SMK!"}
+                    </p>
+                    <button onclick="location.reload()" class="mt-4 px-6 py-3 rounded-2xl bg-lilac-950 border border-lilac-700 text-lilac-200 hover:border-lilac-400 text-xs font-bold transition-all">
+                        <i class="fa-solid fa-rotate-right mr-1"></i> Ulangi Kuis
+                    </button>
+                </div>
+            `;
+        }
+
+        // --- 6. Experience Modal Logic ---
+        const modalData = {
+            pc: {
+                title: "Detail Praktik: Merakit Komputer",
+                icon: "fa-desktop",
+                badge: "Praktik Hardware",
+                content: `
+                    <div class="space-y-4 text-sm text-slate-300">
+                        <p>Praktik ini dilakukan secara mandiri di Lab Komputer SMKN 9 Kabupaten Tangerang. Langkah-langkah detail yang dikuasai:</p>
+                        <ul class="list-disc pl-5 space-y-1.5 text-slate-300 text-xs">
+                            <li><strong>Pemeriksaan Komponen:</strong> Memastikan kecocokan Socket CPU dengan Motherboard (contoh: Socket LGA / AM4).</li>
+                            <li><strong>Pemasangan RAM:</strong> Memasang RAM DDR4 dengan memperhatikan letak sekat (notch) slot.</li>
+                            <li><strong>Manajemen Kabel:</strong> Merapikan kabel Power 24-Pin, SATA, dan Front Panel agar sirkulasi udara casing lancar.</li>
+                            <li><strong>Pengujian POST:</strong> Menghubungkan monitor & keyboard, lalu menekan tombol power hingga muncul tampilan BIOS.</li>
+                        </ul>
+                    </div>
+                `
+            },
+            mikrotik: {
+                title: "Detail Praktik: Konfigurasi MikroTik RouterBOARD",
+                icon: "fa-router",
+                badge: "Jaringan & Routing",
+                content: `
+                    <div class="space-y-4 text-sm text-slate-300">
+                        <p>Mengonfigurasi Mikrotik RouterBOARD agar PC Klien mendapatkan akses internet stabil:</p>
+                        <ul class="list-disc pl-5 space-y-1.5 text-slate-300 text-xs">
+                            <li><strong>Ethernet 1 (WAN):</strong> Mengaktifkan DHCP Client untuk menerima alokasi IP otomatis dari Modem / ISP.</li>
+                            <li><strong>Ethernet 2 (LAN):</strong> Mengatur Alamat IP Statis gateway lokal (misal: 192.168.100.1/24).</li>
+                            <li><strong>NAT Masquerade:</strong> Menterjemahkan IP Lokal ke IP Publik agar data internet dapat ditransmisikan keluar.</li>
+                            <li><strong>Pengujian Klien:</strong> Melakukan ping ke gateway, DNS Google (8.8.8.8), dan pengujian browsing website.</li>
+                        </ul>
+                    </div>
+                `
+            },
+            debian: {
+                title: "Detail Pembelajaran: Linux Debian (Kelas 11)",
+                icon: "fa-linux",
+                badge: "Sistem Operasi Server",
+                content: `
+                    <div class="space-y-4 text-sm text-slate-300">
+                        <p>Materi kelas 11 jurusan TKJ difokuskan pada penguasaan CLI (Command Line Interface) Linux Debian 11:</p>
+                        <ul class="list-disc pl-5 space-y-1.5 text-slate-300 text-xs">
+                            <li><strong>Navigasi Berkas:</strong> Menggunakan perintah <code class="text-lilac-300">cd</code>, <code class="text-lilac-300">ls -l</code>, <code class="text-lilac-300">mkdir</code>, dan <code class="text-lilac-300">rm</code>.</li>
+                            <li><strong>Konfigurasi IP Static:</strong> Mengubah berkas <code class="text-pink-300">/etc/network/interfaces</code>.</li>
+                            <li><strong>Manajemen Server:</strong> Menjalankan daemon service melalui <code class="text-lilac-300">systemctl status/restart/start</code>.</li>
+                            <li><strong>Persiapan Server:</strong> Mempelajari dasar Web Server (Apache2) & Repository lokal.</li>
+                        </ul>
+                    </div>
+                `
+            }
+        };
+
+        function openModal(type) {
+            const data = modalData[type];
+            if (!data) return;
+
+            const modalContent = document.getElementById('modal-content');
+            modalContent.innerHTML = `
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-2xl bg-lilac-950 border border-lilac-700/60 flex items-center justify-center text-lilac-300 text-xl">
+                        <i class="fa-solid ${data.icon}"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-mono font-bold text-lilac-300 uppercase">${data.badge}</span>
+                        <h3 class="text-xl font-bold text-white">${data.title}</h3>
+                    </div>
+                </div>
+                ${data.content}
+                <div class="mt-6 pt-4 border-t border-lilac-900/60 flex justify-end">
+                    <button onclick="closeModal()" class="px-5 py-2.5 rounded-2xl bg-gradient-to-r from-lilac-500 to-indigo-600 text-white font-bold text-xs hover:opacity-90 transition-colors">
+                        Tutup
+                    </button>
+                </div>
+            `;
+
+            document.getElementById('modal-backdrop').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('modal-backdrop').classList.add('hidden');
+        }
+
+        // --- 7. Contact Form Toast ---
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const senderName = document.getElementById('sender-name').value;
+            document.getElementById('toast-message').textContent = `Terima kasih atas dukungannya, ${senderName}! TKJ BISA! ✨`;
+            
+            const toast = document.getElementById('toast');
+            toast.classList.remove('hidden');
+            document.getElementById('contact-form').reset();
+
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 4000);
+        });
+
+        // --- 8. Mobile Navigation Toggle ---
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // --- Onload Initializer ---
+        window.onload = function() {
+            typeLoop();
+            resizeCanvas();
+            drawNodes();
+            loadQuestion();
+        };
+    </script>
+</body>
+</html>
